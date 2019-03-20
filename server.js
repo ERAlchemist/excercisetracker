@@ -138,7 +138,7 @@ app.get('/api/exercise/:log', (req, res) => {
       } else if (!user) {
         res.send('User not found');
       } else {
-
+        query.userId = userId;
         if (from !== undefined) {
           from = new Date(from);
           query.date = { $gte: from};

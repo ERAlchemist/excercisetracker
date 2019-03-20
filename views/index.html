@@ -5,31 +5,63 @@
       <title>Exercise Tracker | Free Code Camp</title>
       <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
+     <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    </head>
 
-   <body>
-      <div class="container">
-         <h1>Exercise tracker</h1>
-          <form action="/api/exercise/new-user" method="post">
-            <h3>Create a New User</h3>
-            <p><code>POST /api/exercise/new-user</code></p>
-            <input id="uname" type="text" name="username" placeholder="username">
-            <input type="submit" value="Submit">
-          </form>
-          <form action="/api/exercise/add" method="post">
-            <h3>Add exercises</h3>
-            <p><code>POST /api/exercise/add</code></p>
-            <input id="uid" type="text" name="userId" placeholder="userId*">
-            <input id="desc" type="text" name="description" placeholder="description*">
-            <input id="dur" type="text" name="duration" placeholder="duration* (mins.)">
-            <input id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)">
-            <input type="submit" value="Submit">
-          </form>
+   <body style="background-color: #f6f6f6; text-align: center; font-family: sans-serif;">
+      <div class="container" >
+         <h1><strong>Exercise tracker</strong></h1>
+        <hr>
+                  <div class="container" style="background-color: #e2e2e2; border: 1px solid black; width: 50%;">
+                  <form action="/api/exercise/new-user" method="post">
+                     <h3>Create a New User</h3>
+                     <p><code>POST /api/exercise/new-user</code></p>
+                     <div class="form-group row">
+                           <label class="col-sm-2 col-form-label" style="font-size: 0.85rem">Username</label>
+                        <input class="col-sm-4" id="uname" type="text" name="username" placeholder="username" style="margin-right: 10px;">
+                        <input class="col-sm-2" type="submit" value="Submit">
+                     </div>
+                     
+                  </form>
+                  </div>
+                <hr>
+                     <div class="container" style="background-color: #e2e2e2; border: 1px solid black; width: 50%;">
+                        <form action="/api/exercise/add" method="post">
+                           <h3>Add exercises</h3>
+                           <p><code>POST /api/exercise/add</code></p>
+                           <div class="form-group row">
+                                 <label class="col-sm-2 col-form-label">UserId</label>
+                                 <input id="uid" type="text" name="userId" placeholder="userId*">
+                           </div>
+                           
+                           <div class="form-group row">
+                                 <label class="col-sm-2 col-form-label" style="font-size: 0.85rem">Description</label>
+                                 <input id="desc" type="text" name="description" placeholder="description*">
+                           </div>
+                           <div class="form-group row">
+                                 <label class="col-sm-2 col-form-label">Duration</label>
+                                 <input id="dur" type="text" name="duration" placeholder="duration* (mins.)">
+                           </div>
+                           <div class="form-group row">
+                                 <label class="col-sm-2 col-form-label">Date</label>
+                                 <input  id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)" style="margin-right: 10px;">
+                                 <input type="submit" value="Submit">
+                           </div>
+                           
+                        </form>
+                   </div>
+            
+          </div>
+          <hr>
           <p><strong>GET users's exercise log: </strong><code>GET /api/exercise/log?{userId}[&amp;from][&amp;to][&amp;limit]</code></p>
           <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
           <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
       </div>
    </body>
-
+<!---->
 </html>
